@@ -5,19 +5,19 @@ pipeline {
         stage('Validate') {
             steps {
                 echo 'Building..'
-		sh '/usr/share/maven/bin validate'
+		sh '/usr/share/maven/bin/mvn validate'
             }
         }
         stage('Build') {
             steps {
                 echo 'Testing..'
-		sh '/usr/share/maven/bin package'
+		sh '/usr/share/maven/bin/mvn package'
             }
         }
         stage('Test') {
             steps {
                 echo 'Deploying....'
-		sh '/user/share/maven/bin test'
+		sh '/user/share/maven/bin/mvn test'
             }
         }
     }
