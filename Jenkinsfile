@@ -2,19 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Validate') {
             steps {
                 echo 'Building..'
+		sh '/usr/share/maven/bin validate'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Testing..'
+		sh '/usr/share/maven/bin package'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
                 echo 'Deploying....'
+		sh '/user/share/maven/bin test'
             }
         }
     }
