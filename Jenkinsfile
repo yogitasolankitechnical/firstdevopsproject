@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Validate') {
             steps {
-                echo 'Building..'
+                echo 'validating..'
 		sh '/usr/share/maven/bin/mvn validate'
             }
         }
