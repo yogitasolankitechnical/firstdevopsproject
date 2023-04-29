@@ -20,5 +20,11 @@ pipeline {
 		sh '/usr/share/maven/bin/mvn test'
             }
         }
+	stage('Massage') {
+            steps {
+                echo 'Build is successfull....'
+		
+            }
+        }
     }
 }
